@@ -1,0 +1,73 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/breakpoints" as *;
+
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 20px 0;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    font-size: 30px;
+    color: var(--white);
+    font-weight: 700;
+    font-family: "Montserrat";
+  }
+
+  &__nav {
+    display: flex;
+    padding: 20px;
+
+    &-list {
+      display: flex;
+      gap: 60px;
+
+      @include mediaquery("m") {
+        display: none;
+      }
+
+      &-item {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: "Montserrat";
+        text-align: center;
+        color: var(--white);
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        position: relative;
+
+        &:hover {
+          color: var(--buff);
+
+          &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--buff);
+            top: 25px;
+          }
+        }
+      }
+    }
+    &-hamburger {
+      visibility: hidden;
+      color: var(--white);
+
+      @include mediaquery("m") {
+        visibility: visible;
+      }
+    }
+  }
+}

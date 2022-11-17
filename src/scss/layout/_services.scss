@@ -1,0 +1,38 @@
+.services {
+  padding: 50px 0;
+
+  &__content {
+    padding: 0 50px;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    row-gap: 10px;
+    column-gap: 20px;
+
+    &-icon {
+      grid-column: 1/2;
+      grid-row: 1/3;
+      margin-top: 5px;
+      color: #95e1d3;
+    }
+
+    &-title {
+      font-size: 14px;
+      text-transform: uppercase;
+      color: var(--black);
+      font-weight: 400;
+    }
+    &-paragraph {
+      grid-column: 2/3;
+      grid-row: 2/3;
+      font-size: 15px;
+      line-height: 24px;
+      color: var(--gray);
+      font-weight: 400;
+      font-family: "Roboto";
+      max-width: 280px;
+    }
+  }
+}

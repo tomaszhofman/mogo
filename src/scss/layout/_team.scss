@@ -1,0 +1,112 @@
+@use "../abstracts/breakpoints" as *;
+
+.team {
+  padding: 70px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__description {
+    text-align: center;
+    max-width: 1030px;
+    margin-bottom: 40px;
+
+    @include mediaquery("xl") {
+      padding: 40px;
+    }
+  }
+
+  &__gallery {
+    display: flex;
+    align-items: center;
+
+    @include mediaquery("xl") {
+      flex-direction: column;
+    }
+
+    &-item {
+      cursor: pointer;
+      position: relative;
+      margin: 15px;
+
+      &-wrapper {
+        display: block;
+
+        background: linear-gradient(
+          to bottom,
+          var(--light-coral) 0%,
+          var(--buff) 100%
+        );
+        transition: all 0.2s linear;
+
+        &:hover {
+          transform: translateX(-10px) translateY(-10px);
+          box-shadow: 10px 10px 0px 0px var(--turquoise);
+        }
+
+        &:hover .team__gallery-item-links {
+          opacity: 1;
+        }
+
+        &:hover .team__gallery-item-photo {
+          opacity: 0.2;
+        }
+      }
+      &-photo {
+        opacity: 1;
+        display: block;
+        transition: all 0.2s linear;
+        width: 100%;
+      }
+
+      &-links {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: all 0.2s linear;
+        display: flex;
+
+        .fa-brands {
+          width: 55px;
+          height: 55px;
+          font-size: 30px;
+          color: var(--light-coral);
+          background-color: var(--buff);
+          padding: 15px;
+          border-left: 1px solid var(--light-coral);
+          transition: all 0.2s linear;
+
+          &:hover {
+            background-color: var(--light-coral);
+            color: var(--white);
+          }
+        }
+      }
+
+      &-description {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        p {
+          margin-bottom: 10px;
+          font-weight: 400;
+          font-size: 14px;
+          text-align: center;
+        }
+        span {
+          font-family: "Roboto";
+          text-align: center;
+          font-weight: 300;
+          font-style: italic;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}

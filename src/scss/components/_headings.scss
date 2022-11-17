@@ -1,0 +1,18 @@
+.heading-primary,
+.heading-secondary {
+  color: var(--white);
+  text-align: center;
+}
+
+.heading-primary {
+  margin-bottom: 96px;
+  font-family: "Montserrat";
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.heading-secondary {
+  line-height: 1.05;
+  margin-bottom: 32px;
+  font-family: "Kaushan Script";
+}

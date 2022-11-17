@@ -1,0 +1,82 @@
+@use "../components/headings" as *;
+@use "../abstracts/breakpoints" as *;
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url("../images/header.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+
+  &::before {
+    content: "";
+    background: linear-gradient(
+      to bottom,
+      var(--light-coral) 0%,
+      var(--buff) 100%
+    );
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+  }
+
+  &__title {
+    @extend .heading-primary;
+    font-size: 150px;
+    line-height: 140px;
+    max-width: 900px;
+
+    @include mediaquery("xl") {
+      font-size: 80px;
+      max-width: 700px;
+      line-height: 90px;
+    }
+
+    @include mediaquery("xs") {
+      font-size: 40px;
+      max-width: 700px;
+      line-height: 50px;
+    }
+  }
+
+  &__subtitle {
+    @extend .heading-secondary;
+    font-size: 72px;
+
+    @include mediaquery("xl") {
+      font-size: 40px;
+    }
+
+    @include mediaquery("xs") {
+      font-size: 25px;
+    }
+  }
+
+  &__btn {
+    width: 160px;
+    height: 40px;
+    border: 3px solid var(--white);
+    background-color: transparent;
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: "Montserrat";
+    text-align: center;
+    cursor: pointer;
+  }
+}

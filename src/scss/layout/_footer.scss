@@ -1,0 +1,60 @@
+@use "../abstracts/breakpoints" as *;
+
+.footer {
+  border-top: 1px solid black;
+
+  &__wrapper {
+    padding: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include mediaquery("xl") {
+      flex-direction: column;
+    }
+  }
+
+  &__copyright {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    color: var(--black);
+    line-height: 1.4rem;
+    font-weight: 400;
+
+    @include mediaquery("xl") {
+      margin-bottom: 50px;
+    }
+
+    span {
+      color: var(--light-coral);
+    }
+  }
+
+  &__form {
+    &-email {
+      width: 200px;
+      font-family: "Roboto", sans-serif;
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 24px;
+      font-weight: 300i;
+      font-style: italic;
+      padding: 8px 14px;
+      border: 1px solid #e7e7e7;
+    }
+
+    &-submit {
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      color: var(--white);
+      line-height: 14px;
+      font-weight: 400;
+      font-weight: bold;
+      text-transform: uppercase;
+      background-color: var(--turquoise);
+      border: 0;
+      padding: 15px 35px;
+      cursor: pointer;
+    }
+  }
+}
